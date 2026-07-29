@@ -25,15 +25,15 @@ extension Clients {
   protocol DashboardsServiceStub {
     func createDashboard(
       request: CreateDashboardRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleMonitoringDashboardV1.Dashboard
+    ) async throws -> GoogleCloudMonitoringDashboardV1.Dashboard
 
     func listDashboards(
       request: ListDashboardsRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleMonitoringDashboardV1.ListDashboardsResponse
+    ) async throws -> GoogleCloudMonitoringDashboardV1.ListDashboardsResponse
 
     func getDashboard(
       request: GetDashboardRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleMonitoringDashboardV1.Dashboard
+    ) async throws -> GoogleCloudMonitoringDashboardV1.Dashboard
 
     func deleteDashboard(
       request: DeleteDashboardRequest, options: GoogleCloudGax.RequestOptions
@@ -41,7 +41,7 @@ extension Clients {
 
     func updateDashboard(
       request: UpdateDashboardRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleMonitoringDashboardV1.Dashboard
+    ) async throws -> GoogleCloudMonitoringDashboardV1.Dashboard
   }
 
   class DashboardsServiceTransport: DashboardsServiceStub {
@@ -54,7 +54,7 @@ extension Clients {
 
     public func createDashboard(
       request: CreateDashboardRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleMonitoringDashboardV1.Dashboard {
+    ) async throws -> GoogleCloudMonitoringDashboardV1.Dashboard {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.parent as Swift.String?, !pathVariable0.isEmpty else {
           throw GoogleCloudGax.RequestError.binding("'request.parent' is not set or is empty")
@@ -75,12 +75,12 @@ extension Clients {
       }
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleMonitoringDashboardV1.Dashboard.self, from: data)
+        GoogleCloudMonitoringDashboardV1.Dashboard.self, from: data)
     }
 
     public func listDashboards(
       request: ListDashboardsRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleMonitoringDashboardV1.ListDashboardsResponse {
+    ) async throws -> GoogleCloudMonitoringDashboardV1.ListDashboardsResponse {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.parent as Swift.String?, !pathVariable0.isEmpty else {
           throw GoogleCloudGax.RequestError.binding("'request.parent' is not set or is empty")
@@ -98,12 +98,12 @@ extension Clients {
       req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleMonitoringDashboardV1.ListDashboardsResponse.self, from: data)
+        GoogleCloudMonitoringDashboardV1.ListDashboardsResponse.self, from: data)
     }
 
     public func getDashboard(
       request: GetDashboardRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleMonitoringDashboardV1.Dashboard {
+    ) async throws -> GoogleCloudMonitoringDashboardV1.Dashboard {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.name as Swift.String?, !pathVariable0.isEmpty else {
           throw GoogleCloudGax.RequestError.binding("'request.name' is not set or is empty")
@@ -118,7 +118,7 @@ extension Clients {
       req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleMonitoringDashboardV1.Dashboard.self, from: data)
+        GoogleCloudMonitoringDashboardV1.Dashboard.self, from: data)
     }
 
     public func deleteDashboard(
@@ -141,7 +141,7 @@ extension Clients {
 
     public func updateDashboard(
       request: UpdateDashboardRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleMonitoringDashboardV1.Dashboard {
+    ) async throws -> GoogleCloudMonitoringDashboardV1.Dashboard {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.dashboard.map({ $0.name }), !pathVariable0.isEmpty else {
           throw GoogleCloudGax.RequestError.binding(
@@ -163,7 +163,7 @@ extension Clients {
       }
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleMonitoringDashboardV1.Dashboard.self, from: data)
+        GoogleCloudMonitoringDashboardV1.Dashboard.self, from: data)
     }
   }
 }

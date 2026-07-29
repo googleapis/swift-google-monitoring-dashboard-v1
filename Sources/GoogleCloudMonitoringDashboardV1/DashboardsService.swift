@@ -48,7 +48,7 @@ public class DashboardsServiceClient: Clients.DashboardsServiceProtocol {
   /// @Snippet(path: "DashboardsService_CreateDashboard")
   public func createDashboard(
     request: CreateDashboardRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleMonitoringDashboardV1.Dashboard {
+  ) async throws -> GoogleCloudMonitoringDashboardV1.Dashboard {
     try await self.inner.createDashboard(request: request, options: options)
   }
 
@@ -61,7 +61,7 @@ public class DashboardsServiceClient: Clients.DashboardsServiceProtocol {
   /// @Snippet(path: "DashboardsService_ListDashboards")
   public func listDashboards(
     request: ListDashboardsRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleMonitoringDashboardV1.ListDashboardsResponse {
+  ) async throws -> GoogleCloudMonitoringDashboardV1.ListDashboardsResponse {
     try await self.inner.listDashboards(request: request, options: options)
   }
 
@@ -76,7 +76,8 @@ public class DashboardsServiceClient: Clients.DashboardsServiceProtocol {
     byItem: ListDashboardsRequest, options: GoogleCloudGax.RequestOptions
   ) throws -> any AsyncSequence<Dashboard, Swift.Error> {
     let listRpc = {
-      (token: Swift.String) async throws -> GoogleMonitoringDashboardV1.ListDashboardsResponse in
+      (token: Swift.String) async throws -> GoogleCloudMonitoringDashboardV1.ListDashboardsResponse
+      in
       var request = byItem
       request.pageToken = token
       return try await self.listDashboards(request: request, options: options)
@@ -93,7 +94,7 @@ public class DashboardsServiceClient: Clients.DashboardsServiceProtocol {
   /// @Snippet(path: "DashboardsService_GetDashboard")
   public func getDashboard(
     request: GetDashboardRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleMonitoringDashboardV1.Dashboard {
+  ) async throws -> GoogleCloudMonitoringDashboardV1.Dashboard {
     try await self.inner.getDashboard(request: request, options: options)
   }
 
@@ -119,7 +120,7 @@ public class DashboardsServiceClient: Clients.DashboardsServiceProtocol {
   /// @Snippet(path: "DashboardsService_UpdateDashboard")
   public func updateDashboard(
     request: UpdateDashboardRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleMonitoringDashboardV1.Dashboard {
+  ) async throws -> GoogleCloudMonitoringDashboardV1.Dashboard {
     try await self.inner.updateDashboard(request: request, options: options)
   }
 }
@@ -133,17 +134,17 @@ extension Clients {
   public protocol DashboardsServiceProtocol {
     /// See `DashboardsServiceClient.createDashboard`.
     func createDashboard(request: CreateDashboardRequest) async throws
-      -> GoogleMonitoringDashboardV1.Dashboard
+      -> GoogleCloudMonitoringDashboardV1.Dashboard
 
     /// See `DashboardsServiceClient.createDashboard`.
     func createDashboard(
       parent: Swift.String,
       dashboard: Dashboard?,
-    ) async throws -> GoogleMonitoringDashboardV1.Dashboard
+    ) async throws -> GoogleCloudMonitoringDashboardV1.Dashboard
 
     /// See `DashboardsServiceClient.listDashboards`.
     func listDashboards(request: ListDashboardsRequest) async throws
-      -> GoogleMonitoringDashboardV1.ListDashboardsResponse
+      -> GoogleCloudMonitoringDashboardV1.ListDashboardsResponse
 
     /// See `DashboardsServiceClient.listDashboards`.
     func listDashboards(
@@ -157,12 +158,12 @@ extension Clients {
 
     /// See `DashboardsServiceClient.getDashboard`.
     func getDashboard(request: GetDashboardRequest) async throws
-      -> GoogleMonitoringDashboardV1.Dashboard
+      -> GoogleCloudMonitoringDashboardV1.Dashboard
 
     /// See `DashboardsServiceClient.getDashboard`.
     func getDashboard(
       name: Swift.String,
-    ) async throws -> GoogleMonitoringDashboardV1.Dashboard
+    ) async throws -> GoogleCloudMonitoringDashboardV1.Dashboard
 
     /// See `DashboardsServiceClient.deleteDashboard`.
     func deleteDashboard(request: DeleteDashboardRequest) async throws
@@ -174,17 +175,17 @@ extension Clients {
 
     /// See `DashboardsServiceClient.updateDashboard`.
     func updateDashboard(request: UpdateDashboardRequest) async throws
-      -> GoogleMonitoringDashboardV1.Dashboard
+      -> GoogleCloudMonitoringDashboardV1.Dashboard
 
     /// See `DashboardsServiceClient.createDashboard`.
     func createDashboard(
       request: CreateDashboardRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleMonitoringDashboardV1.Dashboard
+    ) async throws -> GoogleCloudMonitoringDashboardV1.Dashboard
 
     /// See `DashboardsServiceClient.listDashboards`.
     func listDashboards(
       request: ListDashboardsRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleMonitoringDashboardV1.ListDashboardsResponse
+    ) async throws -> GoogleCloudMonitoringDashboardV1.ListDashboardsResponse
 
     /// See `DashboardsServiceClient.listDashboards`.
     func listDashboards(
@@ -194,7 +195,7 @@ extension Clients {
     /// See `DashboardsServiceClient.getDashboard`.
     func getDashboard(
       request: GetDashboardRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleMonitoringDashboardV1.Dashboard
+    ) async throws -> GoogleCloudMonitoringDashboardV1.Dashboard
 
     /// See `DashboardsServiceClient.deleteDashboard`.
     func deleteDashboard(
@@ -204,28 +205,28 @@ extension Clients {
     /// See `DashboardsServiceClient.updateDashboard`.
     func updateDashboard(
       request: UpdateDashboardRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleMonitoringDashboardV1.Dashboard
+    ) async throws -> GoogleCloudMonitoringDashboardV1.Dashboard
   }
 }
 
 // Default implementations
 extension Clients.DashboardsServiceProtocol {
   public func createDashboard(request: CreateDashboardRequest) async throws
-    -> GoogleMonitoringDashboardV1.Dashboard
+    -> GoogleCloudMonitoringDashboardV1.Dashboard
   {
     try await self.createDashboard(request: request, options: .init())
   }
 
   public func createDashboard(
     request: CreateDashboardRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleMonitoringDashboardV1.Dashboard {
+  ) async throws -> GoogleCloudMonitoringDashboardV1.Dashboard {
     throw GoogleCloudGax.RequestError.unimplemented
   }
 
   public func createDashboard(
     parent: Swift.String,
     dashboard: Dashboard?,
-  ) async throws -> GoogleMonitoringDashboardV1.Dashboard {
+  ) async throws -> GoogleCloudMonitoringDashboardV1.Dashboard {
     let request = CreateDashboardRequest().with {
       $0.parent = parent
       $0.dashboard = dashboard
@@ -234,14 +235,14 @@ extension Clients.DashboardsServiceProtocol {
   }
 
   public func listDashboards(request: ListDashboardsRequest) async throws
-    -> GoogleMonitoringDashboardV1.ListDashboardsResponse
+    -> GoogleCloudMonitoringDashboardV1.ListDashboardsResponse
   {
     try await self.listDashboards(request: request, options: .init())
   }
 
   public func listDashboards(
     request: ListDashboardsRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleMonitoringDashboardV1.ListDashboardsResponse {
+  ) async throws -> GoogleCloudMonitoringDashboardV1.ListDashboardsResponse {
     throw GoogleCloudGax.RequestError.unimplemented
   }
 
@@ -255,7 +256,8 @@ extension Clients.DashboardsServiceProtocol {
     byItem: ListDashboardsRequest, options: GoogleCloudGax.RequestOptions
   ) throws -> any AsyncSequence<Dashboard, Swift.Error> {
     let listRpc = {
-      (token: Swift.String) async throws -> GoogleMonitoringDashboardV1.ListDashboardsResponse in
+      (token: Swift.String) async throws -> GoogleCloudMonitoringDashboardV1.ListDashboardsResponse
+      in
       throw GoogleCloudGax.RequestError.unimplemented
     }
     return GoogleCloudGax.PaginatedResponseSequence(listRpc: listRpc)
@@ -271,20 +273,20 @@ extension Clients.DashboardsServiceProtocol {
   }
 
   public func getDashboard(request: GetDashboardRequest) async throws
-    -> GoogleMonitoringDashboardV1.Dashboard
+    -> GoogleCloudMonitoringDashboardV1.Dashboard
   {
     try await self.getDashboard(request: request, options: .init())
   }
 
   public func getDashboard(
     request: GetDashboardRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleMonitoringDashboardV1.Dashboard {
+  ) async throws -> GoogleCloudMonitoringDashboardV1.Dashboard {
     throw GoogleCloudGax.RequestError.unimplemented
   }
 
   public func getDashboard(
     name: Swift.String,
-  ) async throws -> GoogleMonitoringDashboardV1.Dashboard {
+  ) async throws -> GoogleCloudMonitoringDashboardV1.Dashboard {
     let request = GetDashboardRequest().with {
       $0.name = name
     }
@@ -311,14 +313,14 @@ extension Clients.DashboardsServiceProtocol {
   }
 
   public func updateDashboard(request: UpdateDashboardRequest) async throws
-    -> GoogleMonitoringDashboardV1.Dashboard
+    -> GoogleCloudMonitoringDashboardV1.Dashboard
   {
     try await self.updateDashboard(request: request, options: .init())
   }
 
   public func updateDashboard(
     request: UpdateDashboardRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleMonitoringDashboardV1.Dashboard {
+  ) async throws -> GoogleCloudMonitoringDashboardV1.Dashboard {
     throw GoogleCloudGax.RequestError.unimplemented
   }
 }

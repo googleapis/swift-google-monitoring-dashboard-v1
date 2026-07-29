@@ -58,14 +58,14 @@ extension Clients {
 
     public func createDashboard(
       request: CreateDashboardRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleMonitoringDashboardV1.Dashboard {
+    ) async throws -> GoogleCloudMonitoringDashboardV1.Dashboard {
       try await self._intercept(
         request: request,
         options: options,
         name: "createDashboard",
         action: {
           (r: CreateDashboardRequest, o: GoogleCloudGax.RequestOptions) async throws
-            -> GoogleMonitoringDashboardV1.Dashboard
+            -> GoogleCloudMonitoringDashboardV1.Dashboard
           in
           return try await self.inner.createDashboard(request: r, options: o)
         })
@@ -73,14 +73,14 @@ extension Clients {
 
     public func listDashboards(
       request: ListDashboardsRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleMonitoringDashboardV1.ListDashboardsResponse {
+    ) async throws -> GoogleCloudMonitoringDashboardV1.ListDashboardsResponse {
       try await self._intercept(
         request: request,
         options: options,
         name: "listDashboards",
         action: {
           (r: ListDashboardsRequest, o: GoogleCloudGax.RequestOptions) async throws
-            -> GoogleMonitoringDashboardV1.ListDashboardsResponse
+            -> GoogleCloudMonitoringDashboardV1.ListDashboardsResponse
           in
           return try await self.inner.listDashboards(request: r, options: o)
         })
@@ -88,14 +88,14 @@ extension Clients {
 
     public func getDashboard(
       request: GetDashboardRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleMonitoringDashboardV1.Dashboard {
+    ) async throws -> GoogleCloudMonitoringDashboardV1.Dashboard {
       try await self._intercept(
         request: request,
         options: options,
         name: "getDashboard",
         action: {
           (r: GetDashboardRequest, o: GoogleCloudGax.RequestOptions) async throws
-            -> GoogleMonitoringDashboardV1.Dashboard
+            -> GoogleCloudMonitoringDashboardV1.Dashboard
           in
           return try await self.inner.getDashboard(request: r, options: o)
         })
@@ -116,14 +116,14 @@ extension Clients {
 
     public func updateDashboard(
       request: UpdateDashboardRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleMonitoringDashboardV1.Dashboard {
+    ) async throws -> GoogleCloudMonitoringDashboardV1.Dashboard {
       try await self._intercept(
         request: request,
         options: options,
         name: "updateDashboard",
         action: {
           (r: UpdateDashboardRequest, o: GoogleCloudGax.RequestOptions) async throws
-            -> GoogleMonitoringDashboardV1.Dashboard
+            -> GoogleCloudMonitoringDashboardV1.Dashboard
           in
           return try await self.inner.updateDashboard(request: r, options: o)
         })
